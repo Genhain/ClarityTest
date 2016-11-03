@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ApE-uc-RuF">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Counting PairsVC-->
+        <scene sceneID="EyQ-Mj-7id">
+            <objects>
+                <viewController id="ApE-uc-RuF" customClass="CountingPairsVC" customModule="ClarityTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aD0-G3-MbS"/>
+                        <viewControllerLayoutGuide type="bottom" id="3NK-jI-5Dv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i5g-I2-EGd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number to add " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ab7-jz-6y1">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Difference Count " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tba-Vu-H7b">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add numbers to start building a sequence of numbers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrr-7Y-boo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="kU2-kU-BD4"/>
+                                    <constraint firstAttribute="width" constant="209" id="m1p-C0-Vkv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssu-iV-8ij">
+                                <state key="normal" title="Add"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGh-xo-vaz">
+                                <state key="normal" title="Remove"/>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,1,2,3,4,5,6,7" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iol-Yf-CvM">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="GwJ-wP-Yy6"/>
+                                    <constraint firstAttribute="width" constant="262" id="dIS-6N-3rz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find out how many pairs have a difference of..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jh-OL-3wQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="JCk-m6-ZEd"/>
+                                    <constraint firstAttribute="width" constant="257" id="b7m-Fc-MQW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of pairs with the difference of 0 is 0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMZ-DC-RPM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="Ijs-PY-ZSv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ab7-jz-6y1" firstAttribute="centerX" secondItem="lrr-7Y-boo" secondAttribute="centerX" id="IPy-Ig-2Br"/>
+                            <constraint firstItem="iol-Yf-CvM" firstAttribute="top" secondItem="ab7-jz-6y1" secondAttribute="bottom" constant="71" id="NFT-Ta-3gS"/>
+                            <constraint firstItem="pGh-xo-vaz" firstAttribute="trailing" secondItem="ab7-jz-6y1" secondAttribute="trailing" id="Qbe-36-MDa"/>
+                            <constraint firstItem="Tba-Vu-H7b" firstAttribute="centerX" secondItem="9Jh-OL-3wQ" secondAttribute="centerX" id="YvP-zY-LDZ"/>
+                            <constraint firstItem="9Jh-OL-3wQ" firstAttribute="top" secondItem="iol-Yf-CvM" secondAttribute="bottom" id="dVw-L9-EIc"/>
+                            <constraint firstItem="lrr-7Y-boo" firstAttribute="centerX" secondItem="i5g-I2-EGd" secondAttribute="centerX" id="eM4-vO-euo"/>
+                            <constraint firstItem="NMZ-DC-RPM" firstAttribute="top" secondItem="Tba-Vu-H7b" secondAttribute="bottom" constant="50" id="kmJ-ec-noc"/>
+                            <constraint firstItem="ssu-iV-8ij" firstAttribute="leading" secondItem="ab7-jz-6y1" secondAttribute="leading" id="mM9-sz-Whw"/>
+                            <constraint firstItem="ab7-jz-6y1" firstAttribute="top" secondItem="lrr-7Y-boo" secondAttribute="bottom" constant="22" id="n4I-Ag-Ycb"/>
+                            <constraint firstItem="NMZ-DC-RPM" firstAttribute="centerX" secondItem="Tba-Vu-H7b" secondAttribute="centerX" id="o3N-Ou-nFH"/>
+                            <constraint firstItem="ssu-iV-8ij" firstAttribute="top" secondItem="ab7-jz-6y1" secondAttribute="bottom" constant="19" id="obL-jg-Ixb"/>
+                            <constraint firstItem="9Jh-OL-3wQ" firstAttribute="centerX" secondItem="iol-Yf-CvM" secondAttribute="centerX" id="pQ2-1m-V0h"/>
+                            <constraint firstItem="Tba-Vu-H7b" firstAttribute="top" secondItem="9Jh-OL-3wQ" secondAttribute="bottom" constant="36" id="qEF-eA-jwH"/>
+                            <constraint firstItem="iol-Yf-CvM" firstAttribute="centerX" secondItem="ab7-jz-6y1" secondAttribute="centerX" id="qdU-30-wre"/>
+                            <constraint firstItem="lrr-7Y-boo" firstAttribute="top" secondItem="aD0-G3-MbS" secondAttribute="bottom" constant="40" id="w4q-ok-Ix8"/>
+                            <constraint firstItem="pGh-xo-vaz" firstAttribute="top" secondItem="ab7-jz-6y1" secondAttribute="bottom" constant="19" id="wkV-H6-b2Q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="ssu-iV-8ij" id="gEz-DG-ivc"/>
+                        <outlet property="addNumberTextField" destination="ab7-jz-6y1" id="Jht-XQ-PHM"/>
+                        <outlet property="differenceCountLabel" destination="NMZ-DC-RPM" id="cbJ-ih-8fn"/>
+                        <outlet property="differenceTextField" destination="Tba-Vu-H7b" id="p9M-yc-QXX"/>
+                        <outlet property="removeButton" destination="pGh-xo-vaz" id="uvJ-3K-xi7"/>
+                        <outlet property="sequenceLabel" destination="iol-Yf-CvM" id="Grv-Zs-Omn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cba-HO-Qfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45.600000000000001" y="-97.601199400299862"/>
+        </scene>
+    </scenes>
+</document>
