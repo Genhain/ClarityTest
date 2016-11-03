@@ -124,15 +124,39 @@ class CountingPairsVC: UIViewController
     func countPairs(numbers: [Int], differenceToCount: Int) -> Int {
         
         var pairsWithDifferenceCount = 0
+        var previouslyCountedPairs = [CountedPair]()
         
-        for (index, element) in numbers.enumerated() {
-            for (innerIndex, innerElement) in numbers.enumerated() {
+        outerloop: for (index, element) in numbers.enumerated() {
+            innerLoop: for (innerIndex, innerElement) in numbers.enumerated() {
                 if index == innerIndex {
-                    continue
+                    continue innerLoop
                 }
                 
                 if (element + differenceToCount) == innerElement {
-                    pairsWithDifferenceCount += 1
+                    
+                    let countedPair: CountedPair = .init(element, innerElement)
+                    
+                    if previouslyCountedPairs.count == 0 {
+                        previouslyCountedPairs.append(countedPair)
+                        pairsWithDifferenceCount += 1
+                    }
+                    else {
+                        var isUniquePair = true
+                        for pair in previouslyCountedPairs {
+                            
+                            if (pair.firstElement == element || pair.firstElement == innerElement) &&
+                               (pair.secondElement == element || pair.secondElement == innerElement)
+                            {
+                                isUniquePair = false
+                                break
+                            }
+                        }
+                        
+                        if isUniquePair {
+                            pairsWithDifferenceCount += 1
+                            previouslyCountedPairs.append(countedPair)
+                        }
+                    }
                 }
             }
         }
@@ -140,6 +164,16 @@ class CountingPairsVC: UIViewController
         return pairsWithDifferenceCount
     }
 
+}
+
+struct CountedPair {
+    var firstElement: Int = 0
+    var secondElement: Int = 0
+    
+    init(_ firstElement: Int,_ secondElement: Int) {
+        self.firstElement = firstElement
+        self.secondElement = secondElement
+    }
 }
 
 extension CountingPairsVC
