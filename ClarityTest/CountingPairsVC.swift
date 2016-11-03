@@ -26,13 +26,17 @@ class CountingPairsVC: UIViewController
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Counting Pairs"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func addButtonTouched(_ sender: AnyObject) {
+        
+        if addNumberTextField.text?.characters.count == 0 {
+            return
+        }
         
         let numbertoAddToSequence = self.addNumberTextField.text!
         
@@ -46,7 +50,13 @@ class CountingPairsVC: UIViewController
         
         sequenceLabel.text = userInputSequence
         
+        if userInputSequence.characters.count > 1 && (differenceTextField.text?.characters.count)! > 0 {
+            self.updateDifferenceCount(withDifference: differenceToFind)
+        }
+        
         sequenceLabel.isHidden = false
+        
+        addNumberTextField.text = ""
     }
     
     @IBAction func removeButtonTouched(_ sender: AnyObject) {
@@ -70,7 +80,66 @@ class CountingPairsVC: UIViewController
         if sequenceLabel.text?.characters.count == 0 {
             sequenceLabel.isHidden = true
         }
+        
+        if userInputSequence.characters.count > 1 && (differenceTextField.text?.characters.count)! > 0 {
+            self.updateDifferenceCount(withDifference: differenceToFind)
+        }
     }
+    
+    private var differenceToFind = 0
+    @IBAction func differenceTextFieldValueChanged(_ sender: UITextField) {
+        
+        if sender.text?.characters.count == 0 {
+            differenceCountLabel.isHidden = true
+            differenceToFind = 0
+            return
+        }
+        
+        if userInputSequence.characters.count == 0 {
+            differenceCountLabel.isHidden = true
+            differenceToFind = 0
+            return
+        }
+        
+        differenceToFind = Int(sender.text!)!
+        
+        self.updateDifferenceCount(withDifference: differenceToFind)
+    }
+    
+    func updateDifferenceCount(withDifference difference: Int)
+    {
+        let sequenceNumbers = userInputSequence.components(separatedBy: ", ")
+        
+        let sequenceNumbersAsIntegers = sequenceNumbers.map { (string) -> Int in
+            return Int(string)!
+        }
+        
+        let differencePairCount = self.countPairs(numbers: sequenceNumbersAsIntegers, differenceToCount: difference)
+        
+        differenceCountLabel.text = String(format: "Number of Pairs with the difference %i is %i", arguments: [difference,differencePairCount])
+        
+        differenceCountLabel.isHidden = false
+    }
+    
+    func countPairs(numbers: [Int], differenceToCount: Int) -> Int {
+        
+        var pairsWithDifferenceCount = 0
+        
+        for (index, element) in numbers.enumerated() {
+            for (innerIndex, innerElement) in numbers.enumerated() {
+                if index == innerIndex {
+                    continue
+                }
+                
+                if (element + differenceToCount) == innerElement {
+                    pairsWithDifferenceCount += 1
+                }
+            }
+        }
+        
+        return pairsWithDifferenceCount
+    }
+
 }
 
 extension CountingPairsVC
