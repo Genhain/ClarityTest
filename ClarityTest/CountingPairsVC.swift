@@ -17,6 +17,9 @@ class CountingPairsVC: UIViewController
     @IBOutlet weak var sequenceLabel: UILabel!
     @IBOutlet weak var differenceCountLabel: UILabel!
     
+    
+    private var userInputSequence: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,15 +32,50 @@ class CountingPairsVC: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func addButtonTouched(_ sender: AnyObject) {
+        
+        let numbertoAddToSequence = self.addNumberTextField.text!
+        
+        var format = "%@"
+        
+        if userInputSequence.characters.count > 0 {
+            format = ", %@"
+        }
+        
+        userInputSequence.append(String(format: format, arguments: [numbertoAddToSequence]))
+        
+        sequenceLabel.text = userInputSequence
+        
+        sequenceLabel.isHidden = false
     }
-    */
-
+    
+    @IBAction func removeButtonTouched(_ sender: AnyObject) {
+        var currentSequence: String = userInputSequence
+        
+        
+        if currentSequence.characters.count <= 1 {
+            currentSequence = ""
+        }
+        else {
+            let sequenceNumbers = currentSequence.components(separatedBy: ", ")
+            let numberToRemove = sequenceNumbers.last
+            let numberOfDigits = numberToRemove?.characters.count
+            let numberOfcharactersToRemove = numberOfDigits! + 2
+            currentSequence.removeSubrange(currentSequence.index(currentSequence.endIndex, offsetBy: -numberOfcharactersToRemove)..<currentSequence.endIndex)
+        }
+        
+        sequenceLabel.text = currentSequence
+        userInputSequence = currentSequence
+        
+        if sequenceLabel.text?.characters.count == 0 {
+            sequenceLabel.isHidden = true
+        }
+    }
 }
+
+extension CountingPairsVC
+{
+    
+}
+
+

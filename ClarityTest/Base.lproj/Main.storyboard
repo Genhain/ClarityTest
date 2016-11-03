@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="-36" y="148.87556221889056"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--CountingPairs-->
         <scene sceneID="Qgb-nH-xGn">
             <objects>
-                <viewControllerPlaceholder id="Jmn-jb-4mJ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="CountingPairs" id="Jmn-jb-4mJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8GD-L3-UN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="647" y="103"/>
