@@ -20,9 +20,9 @@ class NuclearRodsVC: UIViewController {
     @IBOutlet weak var addFusedRodsButton: UIButton!
     @IBOutlet weak var removeFusedRodsButton: UIButton!
     
-    
     var numberOfRods: Int = 0
     var fusedRodPairs: [String] = []
+    var totalFusedRods: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +73,6 @@ class NuclearRodsVC: UIViewController {
         updateCostLabel(rodPairs: fusedRodPairs)
     }
     
-    var doesFirstFusedRodFieldsContainValidID = false
-    var doesSecondFusedRodFieldsContainValidID = false
     @IBAction func firstFusedRodEditChanged(_ sender: UITextField) {
         validateTextFieldsInput(firstRodTextField: fusedRodTextField, secondRodTextField: secondFusedRodTextField)
     }
@@ -186,8 +184,7 @@ class NuclearRodsVC: UIViewController {
         currentSetsLabel.text = "{\(rodPairs)}"
     }
     
-    // MARK: Test Function Answer 
-    var totalFusedRods: Int = 0
+    // MARK: Test Function Answer
     func minimalCost(number: Int, pairs: [String]) -> Int {
         
         totalFusedRods = 0
@@ -290,8 +287,6 @@ class NuclearRodsVC: UIViewController {
         return rodMasses
     }
 }
-
-
 
 struct RodMass {
     var rods: [String] = []
