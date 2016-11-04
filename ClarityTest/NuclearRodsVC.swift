@@ -12,7 +12,6 @@ class NuclearRodsVC: UIViewController {
 
     //MARK: IBOutlets
     @IBOutlet weak var rodNumberLabel: UILabel!
-    @IBOutlet weak var fusedRodsLabel: UILabel!
     @IBOutlet weak var currentSetsLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var rodNumberTextField: UITextField!
@@ -32,6 +31,7 @@ class NuclearRodsVC: UIViewController {
         
         self.navigationItem.title = "Nuclear Rods"
         currentSetsLabel.adjustsFontSizeToFitWidth = true
+        removeFusedRodsButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
         updateCostLabel(rodPairs: fusedRodPairs)
         updateCurrentSetsLabel(rodPairs: [[]])
@@ -120,16 +120,12 @@ class NuclearRodsVC: UIViewController {
         addFusedRodsButton.isEnabled = doTextFieldsHaveValidInput
     }
     
-    var fusedRodsSetToAdd: [Int] = []
-    
     @IBAction func addTouched(_ sender: UIButton) {
         
         let firstRodID = fusedRodTextField.text!
         let secondRodID = secondFusedRodTextField.text!
         
         fusedRodPairs.append("\(firstRodID) \(secondRodID)")
-        
-        fusedRodsLabel.isHidden = false
         
         let rodMasses = parseRodMasses(numberOfRods: numberOfRods, pairs: fusedRodPairs)
         
@@ -138,6 +134,10 @@ class NuclearRodsVC: UIViewController {
             stringOfRods.append(rodMass.rods)
         }
         
+        removeFusedRodsButton.isEnabled = true
+        fusedRodTextField.text = ""
+        secondFusedRodTextField.text = ""
+        
         validateTextFieldsInput(firstRodTextField: fusedRodTextField, secondRodTextField: secondFusedRodTextField)
         updateCostLabel(rodPairs: fusedRodPairs)
         updateCurrentSetsLabel(rodPairs: stringOfRods)
@@ -145,23 +145,23 @@ class NuclearRodsVC: UIViewController {
     
     @IBAction func removeTouched(_ sender: UIButton) {
         
-        if fusedRodsSetToAdd.count == 0 {
-            return
+        if fusedRodPairs.count == 1 {
+            removeFusedRodsButton.isEnabled = false
         }
         
-        let rodID = fusedRodsSetToAdd.popLast()
+        _ = fusedRodPairs.popLast()
         
+        let rodMasses = parseRodMasses(numberOfRods: numberOfRods, pairs: fusedRodPairs)
         
-        if fusedRodsSetToAdd.count == 0 {
-            fusedRodsLabel.isHidden = true
-            return
+        var stringOfRods:[[String]] = []
+        for rodMass in rodMasses {
+            stringOfRods.append(rodMass.rods)
         }
         
-        let fusedRodsSetAsString = fusedRodsSetToAdd.map { (rodID) -> String in
-            return String(rodID)
-            }.joined(separator: ",")
         
-        fusedRodsLabel.text = String(format: "{%@}", arguments: [fusedRodsSetAsString])
+        validateTextFieldsInput(firstRodTextField: fusedRodTextField, secondRodTextField: secondFusedRodTextField)
+        updateCostLabel(rodPairs: fusedRodPairs)
+        updateCurrentSetsLabel(rodPairs: stringOfRods)
     }
     
     @IBAction func newSetTouched(_ sender: AnyObject) {
@@ -187,6 +187,8 @@ class NuclearRodsVC: UIViewController {
     // MARK: Test Function Answer 
     var totalFusedRods: Int = 0
     func minimalCost(number: Int, pairs: [String]) -> Int {
+        
+        totalFusedRods = 0
         
         if number == 0 {
             return 0

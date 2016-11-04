@@ -62,11 +62,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fused rods" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dq9-sm-x5Z">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost of moving x rods with y fused is z" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfJ-GU-wOp">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -79,15 +74,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rO4-xN-yIi">
-                                <state key="normal" title="Remove"/>
+                                <state key="normal" title="Remove Last"/>
                                 <connections>
-                                    <action selector="removeTouched:" destination="DA0-e0-WqC" eventType="touchUpInside" id="60c-sA-vWe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XlY-Qo-Iea">
-                                <state key="normal" title="Add Set"/>
-                                <connections>
-                                    <action selector="newSetTouched:" destination="DA0-e0-WqC" eventType="touchUpInside" id="QMN-Jz-siq"/>
+                                    <action selector="removeTouched:" destination="DA0-e0-WqC" eventType="touchUpInside" id="AEp-e1-OV1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current sets" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N31-Lm-UFe">
@@ -109,37 +98,34 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="N31-Lm-UFe" firstAttribute="centerX" secondItem="fuF-Zb-1kL" secondAttribute="centerX" id="06g-xq-644"/>
                             <constraint firstItem="1Ze-so-r3O" firstAttribute="leading" secondItem="X4k-Gb-ZcA" secondAttribute="leadingMargin" id="0YO-bi-kbE"/>
                             <constraint firstItem="x30-mH-yAH" firstAttribute="top" secondItem="kGo-DR-KKj" secondAttribute="bottom" constant="20" id="31E-bL-xrw"/>
-                            <constraint firstItem="N31-Lm-UFe" firstAttribute="centerX" secondItem="XlY-Qo-Iea" secondAttribute="centerX" id="3RL-Hu-x73"/>
                             <constraint firstItem="x30-mH-yAH" firstAttribute="centerX" secondItem="kGo-DR-KKj" secondAttribute="centerX" id="4dK-Ze-Rzv"/>
                             <constraint firstItem="JUL-ta-aRd" firstAttribute="leading" secondItem="fuF-Zb-1kL" secondAttribute="leading" id="5qM-7R-LOa"/>
-                            <constraint firstItem="XlY-Qo-Iea" firstAttribute="centerX" secondItem="Dq9-sm-x5Z" secondAttribute="centerX" id="6e9-S5-sc9"/>
+                            <constraint firstItem="sfJ-GU-wOp" firstAttribute="centerX" secondItem="N31-Lm-UFe" secondAttribute="centerX" id="9qf-UQ-Km0"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="N31-Lm-UFe" secondAttribute="trailing" constant="300" id="AF2-GU-eCQ"/>
                             <constraint firstItem="JUL-ta-aRd" firstAttribute="top" secondItem="fuF-Zb-1kL" secondAttribute="bottom" constant="20" id="CIj-Ip-PVo"/>
-                            <constraint firstItem="ckr-9Y-voA" firstAttribute="top" secondItem="sfJ-GU-wOp" secondAttribute="bottom" constant="50.5" id="GtJ-fv-o3P"/>
-                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="N31-Lm-UFe" secondAttribute="trailing" constant="300" id="J1Q-WO-zZT"/>
                             <constraint firstItem="kGo-DR-KKj" firstAttribute="top" secondItem="1Ze-so-r3O" secondAttribute="bottom" constant="50" id="JgI-MC-bCX"/>
-                            <constraint firstItem="Dq9-sm-x5Z" firstAttribute="centerX" secondItem="fuF-Zb-1kL" secondAttribute="centerX" id="Lkj-lf-gAr"/>
-                            <constraint firstItem="N31-Lm-UFe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X4k-Gb-ZcA" secondAttribute="leadingMargin" id="Otr-UV-YtM"/>
                             <constraint firstItem="nCY-Go-oLW" firstAttribute="trailing" secondItem="fuF-Zb-1kL" secondAttribute="trailing" id="Qxs-CZ-P9n"/>
-                            <constraint firstItem="Dq9-sm-x5Z" firstAttribute="top" secondItem="JUL-ta-aRd" secondAttribute="bottom" constant="24" id="T3n-LA-eZT"/>
                             <constraint firstItem="UvU-f4-EBP" firstAttribute="top" secondItem="x30-mH-yAH" secondAttribute="bottom" constant="20" id="TYp-8p-SjE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Ze-so-r3O" secondAttribute="trailing" id="VBb-wg-Rat"/>
                             <constraint firstItem="1Ze-so-r3O" firstAttribute="centerX" secondItem="X4k-Gb-ZcA" secondAttribute="centerX" id="VTO-qz-hgE"/>
-                            <constraint firstItem="sfJ-GU-wOp" firstAttribute="centerX" secondItem="N31-Lm-UFe" secondAttribute="centerX" id="X0b-lu-Alb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rO4-xN-yIi" secondAttribute="trailing" constant="13" id="YlT-cr-Mcz"/>
                             <constraint firstItem="rO4-xN-yIi" firstAttribute="top" secondItem="fuF-Zb-1kL" secondAttribute="bottom" constant="19.5" id="aaL-Dk-Eml"/>
+                            <constraint firstItem="sfJ-GU-wOp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="N31-Lm-UFe" secondAttribute="bottom" constant="20" id="anI-Wz-t9D"/>
                             <constraint firstItem="nCY-Go-oLW" firstAttribute="top" secondItem="fuF-Zb-1kL" secondAttribute="bottom" constant="20.5" id="dBS-D5-g7I"/>
                             <constraint firstItem="UvU-f4-EBP" firstAttribute="centerX" secondItem="x30-mH-yAH" secondAttribute="centerX" id="gGy-bl-GPN"/>
                             <constraint firstItem="fuF-Zb-1kL" firstAttribute="centerX" secondItem="x30-mH-yAH" secondAttribute="centerX" id="gZm-aV-wTt"/>
+                            <constraint firstItem="ckr-9Y-voA" firstAttribute="top" secondItem="sfJ-GU-wOp" secondAttribute="bottom" constant="75.5" id="hbw-VU-SBA"/>
                             <constraint firstItem="JUL-ta-aRd" firstAttribute="leading" secondItem="NGB-fE-ww7" secondAttribute="trailing" constant="20" id="iOm-9C-l6J"/>
                             <constraint firstItem="NGB-fE-ww7" firstAttribute="top" secondItem="fuF-Zb-1kL" secondAttribute="bottom" constant="19.5" id="jGv-tx-sAZ"/>
-                            <constraint firstItem="sfJ-GU-wOp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="N31-Lm-UFe" secondAttribute="bottom" constant="10" id="jK8-d3-eYY"/>
                             <constraint firstItem="rO4-xN-yIi" firstAttribute="leading" secondItem="nCY-Go-oLW" secondAttribute="trailing" constant="20" id="mJN-iB-NQ7"/>
+                            <constraint firstItem="N31-Lm-UFe" firstAttribute="top" secondItem="JUL-ta-aRd" secondAttribute="bottom" constant="50" id="n7Z-ei-aG9"/>
                             <constraint firstItem="kGo-DR-KKj" firstAttribute="centerX" secondItem="1Ze-so-r3O" secondAttribute="centerX" id="nFC-DZ-rgA"/>
                             <constraint firstItem="1Ze-so-r3O" firstAttribute="top" secondItem="H8e-5P-Ehp" secondAttribute="bottom" constant="50" id="nIW-Sv-sKk"/>
-                            <constraint firstItem="XlY-Qo-Iea" firstAttribute="top" secondItem="Dq9-sm-x5Z" secondAttribute="bottom" constant="10" id="qh6-v8-4Fa"/>
                             <constraint firstItem="fuF-Zb-1kL" firstAttribute="top" secondItem="UvU-f4-EBP" secondAttribute="bottom" constant="45" id="uUH-lg-09t"/>
-                            <constraint firstItem="N31-Lm-UFe" firstAttribute="top" secondItem="XlY-Qo-Iea" secondAttribute="bottom" constant="30" id="vzA-zU-a3x"/>
+                            <constraint firstItem="N31-Lm-UFe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X4k-Gb-ZcA" secondAttribute="leadingMargin" id="xF0-u2-DhB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -147,7 +133,6 @@
                         <outlet property="costLabel" destination="sfJ-GU-wOp" id="N0c-aw-Ozo"/>
                         <outlet property="currentSetsLabel" destination="N31-Lm-UFe" id="QAB-Px-4jk"/>
                         <outlet property="fusedRodTextField" destination="JUL-ta-aRd" id="lPR-sg-DwP"/>
-                        <outlet property="fusedRodsLabel" destination="Dq9-sm-x5Z" id="SDT-Ls-R3r"/>
                         <outlet property="removeFusedRodsButton" destination="rO4-xN-yIi" id="rxC-Sy-EXU"/>
                         <outlet property="rodNumberLabel" destination="UvU-f4-EBP" id="HbV-7J-9mt"/>
                         <outlet property="rodNumberTextField" destination="x30-mH-yAH" id="Z5W-1D-gac"/>
