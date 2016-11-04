@@ -44,6 +44,8 @@ class NuclearRodsVC: UIViewController {
     
     @IBAction func fuelRodNumberEditChanged(_ sender: UITextField) {
         
+        fusedRodPairs.removeAll()
+        
         var rodNumber = 0
         
         if sender.text?.characters.count == 0 {
