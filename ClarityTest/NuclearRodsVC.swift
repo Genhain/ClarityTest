@@ -108,10 +108,14 @@ class NuclearRodsVC: UIViewController {
             }
         }
         
-        //if fusedRodsSetToAdd.contains(rodID) {
-          //  return
-        //}
+        let rodMasses = parseRodMasses(numberOfRods: numberOfRods, pairs: fusedRodPairs)
         
+        for rodMass in rodMasses {
+            if rodMass.rods.contains(firstRodTextField.text!) &&
+                rodMass.rods.contains(secondRodTextField.text!) {
+                doTextFieldsHaveValidInput = false
+            }
+        }
         
         addFusedRodsButton.isEnabled = doTextFieldsHaveValidInput
     }
@@ -134,6 +138,7 @@ class NuclearRodsVC: UIViewController {
             stringOfRods.append(rodMass.rods)
         }
         
+        validateTextFieldsInput(firstRodTextField: fusedRodTextField, secondRodTextField: secondFusedRodTextField)
         updateCostLabel(rodPairs: fusedRodPairs)
         updateCurrentSetsLabel(rodPairs: stringOfRods)
     }
