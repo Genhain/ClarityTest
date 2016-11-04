@@ -118,9 +118,9 @@
 				08AAB01C1DCB12CE0056BD4A /* LaunchScreen.storyboard */,
 				08AAB01F1DCB12CE0056BD4A /* Info.plist */,
 				08AAB0471DCB56000056BD4A /* Volleyball.storyboard */,
+				08AAB0491DCB56210056BD4A /* VolleyballVC.swift */,
 				089362241DCB98BC00B3D51F /* NuclearRodsVC.swift */,
 				089362261DCB98DC00B3D51F /* NuclearRods.storyboard */,
-				08AAB0491DCB56210056BD4A /* VolleyballVC.swift */,
 			);
 			path = ClarityTest;
 			sourceTree = "<group>";
