@@ -108,6 +108,10 @@ class NuclearRodsVC: UIViewController {
             }
         }
         
+        //if fusedRodsSetToAdd.contains(rodID) {
+          //  return
+        //}
+        
         
         addFusedRodsButton.isEnabled = doTextFieldsHaveValidInput
     }
@@ -116,31 +120,22 @@ class NuclearRodsVC: UIViewController {
     
     @IBAction func addTouched(_ sender: UIButton) {
         
-        let rodID = Int(fusedRodTextField.text!)!
+        let firstRodID = fusedRodTextField.text!
+        let secondRodID = secondFusedRodTextField.text!
         
-        if rodID == 0 {
-            return
-        }
-        
-        if rodID > numberOfRods {
-            return
-        }
-        
-        if fusedRodsSetToAdd.contains(rodID) {
-            return
-        }
-        
-        fusedRodsSetToAdd.append(rodID)
-        
-        let fusedRodsSetAsString = fusedRodsSetToAdd.map { (rodID) -> String in
-            return String(rodID)
-        }.joined(separator: ",")
-        
-        fusedRodsLabel.text = String(format: "{%@}", arguments: [fusedRodsSetAsString])
+        fusedRodPairs.append("\(firstRodID) \(secondRodID)")
         
         fusedRodsLabel.isHidden = false
         
+        let rodMasses = parseRodMasses(numberOfRods: numberOfRods, pairs: fusedRodPairs)
+        
+        var stringOfRods:[[String]] = []
+        for rodMass in rodMasses {
+            stringOfRods.append(rodMass.rods)
+        }
+        
         updateCostLabel(rodPairs: fusedRodPairs)
+        updateCurrentSetsLabel(rodPairs: stringOfRods)
     }
     
     @IBAction func removeTouched(_ sender: UIButton) {
@@ -162,8 +157,6 @@ class NuclearRodsVC: UIViewController {
             }.joined(separator: ",")
         
         fusedRodsLabel.text = String(format: "{%@}", arguments: [fusedRodsSetAsString])
-        
-        updateCostLabel(rodPairs: fusedRodPairs)
     }
     
     @IBAction func newSetTouched(_ sender: AnyObject) {
