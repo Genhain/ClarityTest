@@ -10,13 +10,16 @@ import UIKit
 
 class NuclearRodsVC: UIViewController {
 
+    //MARK: IBOutlets
     @IBOutlet weak var rodNumberLabel: UILabel!
     @IBOutlet weak var fusedRodsLabel: UILabel!
     @IBOutlet weak var currentSetsLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var rodNumberTextField: UITextField!
     @IBOutlet weak var fusedRodTextField: UITextField!
-    
+    @IBOutlet weak var secondFusedRodTextField: UITextField!
+    @IBOutlet weak var addFusedRodsButton: UIButton!
+    @IBOutlet weak var removeFusedRodsButton: UIButton!
     
     
     var numberOfRods: Int = 0
@@ -68,10 +71,45 @@ class NuclearRodsVC: UIViewController {
         updateCostLabel(rodPairs: fusedRodPairs)
     }
     
-    @IBAction func fusedRodsEditChanged(_ sender: UITextField) {
-        if sender.text?.characters.count == 0 {
-            return
+    var doesFirstFusedRodFieldsContainValidID = false
+    var doesSecondFusedRodFieldsContainValidID = false
+    @IBAction func firstFusedRodEditChanged(_ sender: UITextField) {
+        validateTextFieldsInput(firstRodTextField: fusedRodTextField, secondRodTextField: secondFusedRodTextField)
+    }
+    
+    @IBAction func secondFusedRodEditChanged(_ sender: AnyObject) {
+        validateTextFieldsInput(firstRodTextField: fusedRodTextField, secondRodTextField: secondFusedRodTextField)
+    }
+    
+    func validateTextFieldsInput(firstRodTextField: UITextField, secondRodTextField: UITextField) {
+        
+        var doTextFieldsHaveValidInput = true
+        
+        if firstRodTextField.text?.characters.count == 0 ||
+            secondRodTextField.text?.characters.count == 0 {
+            doTextFieldsHaveValidInput = false
         }
+        
+        if Int(firstRodTextField.text!) == 0  ||
+            Int(secondRodTextField.text!) == 0 {
+            doTextFieldsHaveValidInput = false
+        }
+        
+        if Int(firstRodTextField.text!) == Int(secondRodTextField.text!) {
+            doTextFieldsHaveValidInput = false
+        }
+        
+        if !firstRodTextField.text!.isEmpty &&
+            !secondRodTextField.text!.isEmpty {
+            
+            if Int(firstRodTextField.text!)! > numberOfRods ||
+                Int(secondRodTextField.text!)! > numberOfRods {
+                doTextFieldsHaveValidInput = false
+            }
+        }
+        
+        
+        addFusedRodsButton.isEnabled = doTextFieldsHaveValidInput
     }
     
     var fusedRodsSetToAdd: [Int] = []
@@ -148,6 +186,7 @@ class NuclearRodsVC: UIViewController {
         currentSetsLabel.text = "{\(rodPairs)}"
     }
     
+    // MARK: Test Function Answer 
     var totalFusedRods: Int = 0
     func minimalCost(number: Int, pairs: [String]) -> Int {
         

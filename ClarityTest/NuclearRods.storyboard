@@ -54,7 +54,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <action selector="fusedRodsEditChanged:" destination="DA0-e0-WqC" eventType="editingChanged" id="NGI-Eq-ZcH"/>
+                                    <action selector="firstFusedRodEditChanged:" destination="DA0-e0-WqC" eventType="editingChanged" id="cOr-te-x2s"/>
                                 </connections>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x Rods to move" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvU-f4-EBP">
@@ -102,6 +102,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="secondFusedRodEditChanged:" destination="DA0-e0-WqC" eventType="editingChanged" id="3tU-JZ-bnD"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -140,12 +143,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addFusedRodsButton" destination="NGB-fE-ww7" id="ZuN-uT-5uU"/>
                         <outlet property="costLabel" destination="sfJ-GU-wOp" id="N0c-aw-Ozo"/>
                         <outlet property="currentSetsLabel" destination="N31-Lm-UFe" id="QAB-Px-4jk"/>
                         <outlet property="fusedRodTextField" destination="JUL-ta-aRd" id="lPR-sg-DwP"/>
                         <outlet property="fusedRodsLabel" destination="Dq9-sm-x5Z" id="SDT-Ls-R3r"/>
+                        <outlet property="removeFusedRodsButton" destination="rO4-xN-yIi" id="rxC-Sy-EXU"/>
                         <outlet property="rodNumberLabel" destination="UvU-f4-EBP" id="HbV-7J-9mt"/>
                         <outlet property="rodNumberTextField" destination="x30-mH-yAH" id="Z5W-1D-gac"/>
+                        <outlet property="secondFusedRodTextField" destination="nCY-Go-oLW" id="H0e-5A-SHu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RO0-VS-6w6" userLabel="First Responder" sceneMemberID="firstResponder"/>
