@@ -177,7 +177,7 @@ Due to the speed of this algorithm you cant try it out for yourself effectively 
 
 ### Time Taken
 
-**Algorithm** - 1 hour, initially i did it with integers, but then reread the function signature you set in the paper and decided to respect it which required a little refactoring.
+**Algorithm** - 1.5 hours, initially i did it with integers, but then reread the function signature you set in the paper and decided to respect it which required a little refactoring.
 
 **View Controller Time Total** - 3 hours, again extra time to account for changing the way variables are input
 
