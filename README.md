@@ -1,6 +1,6 @@
 # ClarityTest
 
-If you dont wish to rummage through code here are the answers directly
+If you dont wish to rummage through the code, or can't or do not want to run the project here are the answers directly
 
 ## Counting Pairs
 
