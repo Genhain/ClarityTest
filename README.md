@@ -2,7 +2,15 @@
 
 If you dont wish to rummage through the code, or can't or do not want to run the project here are the answers directly
 
+
+
 ## Counting Pairs
+
+### Time Taken
+
+**Algorithm** - 30 minutes
+
+**View Controller Time Total** - 2 hours
 
     func countPairs(numbers: [Int], differenceToCount: Int) -> Int {
     
@@ -48,6 +56,12 @@ If you dont wish to rummage through the code, or can't or do not want to run the
     }
 
 ## Volleyball match
+
+### Time Taken
+
+**Algorithm** - 2 hours, found this one a bit tricky intially to have the idea of using a binary tree and then implementing it
+
+**View Controller Time Total** - 40 minutes
 
     static func volleyball(A: Int, B: Int) -> Int {
         if A < 25 && B < 25 {
@@ -160,6 +174,12 @@ Due to the speed of this algorithm you cant try it out for yourself effectively 
     print(volleyball(A: 3, B: 4)) //Result: 0
 
 ## Nuclear Rods
+
+### Time Taken
+
+**Algorithm** - 1 hour, initially i did it with integers, but then reread the function signature you set in the paper and decided to respect it which required a little refactoring.
+
+**View Controller Time Total** - 3 hours, again extra time to account for changing the way variables are input
 
     func minimalCost(number: Int, pairs: [String]) -> Int {
         
