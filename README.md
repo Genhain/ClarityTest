@@ -162,7 +162,7 @@ If you dont wish to rummage through the code, or can't or do not want to run the
    
 ### Sample run
 
-Due to the speed of this algorithm you cant try it out for yourself effectively in the app so here is some some runs
+Due to the speed of this algorithm you cant try it out for yourself effectively in the app so here is some test runs
 
     print(volleyball(A: 0, B: 25)) //Result: 1
     print(volleyball(A: 25, B: 1)) //Result: 25
