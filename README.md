@@ -145,6 +145,19 @@ If you dont wish to rummage through the code, or can't or do not want to run the
 
         }
     }
+   
+### Sample run
+
+Due to the speed of this algorithm you cant try it out for yourself effectively in the app so here is some some runs
+
+    print(volleyball(A: 0, B: 25)) //Result: 1
+    print(volleyball(A: 25, B: 1)) //Result: 25
+    print(volleyball(A: 25, B: 2)) //Result: 325
+    print(volleyball(A: 3, B: 25)) //Result: 2925
+    print(volleyball(A: 4, B: 25)) //Result: 20475
+    print(volleyball(A: 25, B: 5)) //Result: 118755
+    print(volleyball(A: 25, B: 6)) //Result: 593775
+    print(volleyball(A: 3, B: 4)) //Result: 0
 
 ## Nuclear Rods
 
