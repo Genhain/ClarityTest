@@ -19,73 +19,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find number of sequences needed to obtain the final score in a game of volleyball" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="411-4O-Xrz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="411-4O-Xrz">
+                                <mutableString key="text">This one is a little different than the other two, the solution i came up with works using a binary tree to construct every possible outcome and then counting the leaf nodes, however the higher the respective scores get, the amount of possible outcomes get's exponentially higher, and constructing and traversing the tree takes significant amount of time. I could probably optimise it and how it is traversed possibly to get a speed increase but considering that the scores might potentially go above 25 a side due to the 2 point lead rule, the construction of the outcomes would more than likely need a few dozen CPU's. So instead i invite you to</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTV-Ko-eEe">
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhS-Rb-q67">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvh-iO-dWc">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gnn-uh-YGf">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Q3E-5s-KmG"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WA3-m7-b0N">
+                                <state key="normal" title="Click Here"/>
                                 <connections>
-                                    <action selector="teamBScoreEditChanged:" destination="iwn-gC-RyF" eventType="editingChanged" id="ltQ-kK-H4i"/>
+                                    <action selector="clickHereTouched:" destination="iwn-gC-RyF" eventType="touchUpInside" id="2OU-V2-pGJ"/>
                                 </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uho-mz-eHT">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="3C8-Yq-Uem"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="teamAScoreEditChanged:" destination="iwn-gC-RyF" eventType="editingChanged" id="uNk-nO-eqC"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Sequences is x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td4-GF-dhP">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </button>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9jx-1x-934">
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Td4-GF-dhP" firstAttribute="centerX" secondItem="SBu-L3-3Nm" secondAttribute="centerX" id="38Q-r3-kmm"/>
-                            <constraint firstItem="Td4-GF-dhP" firstAttribute="top" secondItem="nTV-Ko-eEe" secondAttribute="bottom" constant="328" id="9x5-dQ-qAW"/>
-                            <constraint firstItem="Qvh-iO-dWc" firstAttribute="top" secondItem="nTV-Ko-eEe" secondAttribute="bottom" constant="30" id="DpA-BI-Ah7"/>
+                            <constraint firstAttribute="trailing" secondItem="9jx-1x-934" secondAttribute="trailing" id="5q9-QV-oZm"/>
+                            <constraint firstItem="9jx-1x-934" firstAttribute="top" secondItem="SBu-L3-3Nm" secondAttribute="top" id="DEH-or-mji"/>
                             <constraint firstAttribute="trailingMargin" secondItem="411-4O-Xrz" secondAttribute="trailing" id="H4C-jp-pCz"/>
                             <constraint firstItem="411-4O-Xrz" firstAttribute="top" secondItem="InB-My-3ys" secondAttribute="bottom" constant="40" id="NpG-eC-jPN"/>
-                            <constraint firstItem="nTV-Ko-eEe" firstAttribute="centerX" secondItem="411-4O-Xrz" secondAttribute="centerX" id="Vwb-1R-isS"/>
-                            <constraint firstItem="uho-mz-eHT" firstAttribute="centerX" secondItem="VhS-Rb-q67" secondAttribute="centerX" id="Zjq-R1-dmd"/>
-                            <constraint firstItem="gnn-uh-YGf" firstAttribute="top" secondItem="Qvh-iO-dWc" secondAttribute="bottom" constant="63" id="aoo-0g-kAw"/>
-                            <constraint firstItem="VhS-Rb-q67" firstAttribute="top" secondItem="nTV-Ko-eEe" secondAttribute="bottom" constant="30" id="bIV-wf-3YB"/>
-                            <constraint firstItem="VhS-Rb-q67" firstAttribute="leading" secondItem="nTV-Ko-eEe" secondAttribute="leading" constant="-50" id="d9q-Rg-Okc"/>
+                            <constraint firstItem="W2h-AM-RO8" firstAttribute="top" secondItem="9jx-1x-934" secondAttribute="bottom" id="XuG-hN-VQT"/>
                             <constraint firstItem="411-4O-Xrz" firstAttribute="leading" secondItem="SBu-L3-3Nm" secondAttribute="leadingMargin" id="i6P-js-dVw"/>
-                            <constraint firstItem="uho-mz-eHT" firstAttribute="top" secondItem="VhS-Rb-q67" secondAttribute="bottom" constant="63" id="psL-fr-iZH"/>
-                            <constraint firstItem="Qvh-iO-dWc" firstAttribute="trailing" secondItem="nTV-Ko-eEe" secondAttribute="trailing" constant="50" id="pt7-eL-rjU"/>
-                            <constraint firstItem="gnn-uh-YGf" firstAttribute="centerX" secondItem="Qvh-iO-dWc" secondAttribute="centerX" id="sVk-iG-xUI"/>
-                            <constraint firstItem="nTV-Ko-eEe" firstAttribute="top" secondItem="411-4O-Xrz" secondAttribute="bottom" constant="71" id="wkh-FU-vJC"/>
+                            <constraint firstItem="WA3-m7-b0N" firstAttribute="top" secondItem="411-4O-Xrz" secondAttribute="bottom" constant="118.5" id="q8c-WO-bvb"/>
+                            <constraint firstItem="9jx-1x-934" firstAttribute="leading" secondItem="SBu-L3-3Nm" secondAttribute="leading" id="xze-TE-gnc"/>
+                            <constraint firstItem="WA3-m7-b0N" firstAttribute="centerX" secondItem="411-4O-Xrz" secondAttribute="centerX" id="zIG-gC-I8v"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="9jx-1x-934" id="pAV-8q-eX0"/>
+                        <outlet property="webViewTopConstraint" destination="DEH-or-mji" id="UIh-Zx-bgo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUx-tJ-7x7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

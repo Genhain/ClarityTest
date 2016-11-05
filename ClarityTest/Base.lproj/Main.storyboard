@@ -11,6 +11,7 @@
         <scene sceneID="3lx-Pw-Crn">
             <objects>
                 <navigationController id="ytA-s7-Tqr" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Sm-La-1MM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
