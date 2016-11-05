@@ -86,6 +86,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0843A0111DCD93E400F317E5 /* Counting */ = {
+			isa = PBXGroup;
+			children = (
+				08AAB0451DCB15A70056BD4A /* CountingPairs.storyboard */,
+				08AAB0411DCB15750056BD4A /* CountingPairsVC.swift */,
+			);
+			name = Counting;
+			sourceTree = "<group>";
+		};
+		0843A0121DCD93EC00F317E5 /* Volleyball */ = {
+			isa = PBXGroup;
+			children = (
+				08AAB0471DCB56000056BD4A /* Volleyball.storyboard */,
+				08AAB0491DCB56210056BD4A /* VolleyballVC.swift */,
+			);
+			name = Volleyball;
+			sourceTree = "<group>";
+		};
+		0843A0131DCD93F300F317E5 /* Nuclear Rods */ = {
+			isa = PBXGroup;
+			children = (
+				089362241DCB98BC00B3D51F /* NuclearRodsVC.swift */,
+				089362261DCB98DC00B3D51F /* NuclearRods.storyboard */,
+			);
+			name = "Nuclear Rods";
+			sourceTree = "<group>";
+		};
 		08AAB0071DCB12CE0056BD4A = {
 			isa = PBXGroup;
 			children = (
@@ -109,18 +136,15 @@
 		08AAB0121DCB12CE0056BD4A /* ClarityTest */ = {
 			isa = PBXGroup;
 			children = (
-				08AAB0451DCB15A70056BD4A /* CountingPairs.storyboard */,
-				08AAB0411DCB15750056BD4A /* CountingPairsVC.swift */,
+				0843A0111DCD93E400F317E5 /* Counting */,
+				0843A0131DCD93F300F317E5 /* Nuclear Rods */,
+				0843A0121DCD93EC00F317E5 /* Volleyball */,
 				08AAB0131DCB12CE0056BD4A /* AppDelegate.swift */,
-				08AAB0151DCB12CE0056BD4A /* ViewController.swift */,
-				08AAB0171DCB12CE0056BD4A /* Main.storyboard */,
 				08AAB01A1DCB12CE0056BD4A /* Assets.xcassets */,
-				08AAB01C1DCB12CE0056BD4A /* LaunchScreen.storyboard */,
 				08AAB01F1DCB12CE0056BD4A /* Info.plist */,
-				08AAB0471DCB56000056BD4A /* Volleyball.storyboard */,
-				08AAB0491DCB56210056BD4A /* VolleyballVC.swift */,
-				089362241DCB98BC00B3D51F /* NuclearRodsVC.swift */,
-				089362261DCB98DC00B3D51F /* NuclearRods.storyboard */,
+				08AAB01C1DCB12CE0056BD4A /* LaunchScreen.storyboard */,
+				08AAB0171DCB12CE0056BD4A /* Main.storyboard */,
+				08AAB0151DCB12CE0056BD4A /* ViewController.swift */,
 			);
 			path = ClarityTest;
 			sourceTree = "<group>";

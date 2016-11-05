@@ -176,9 +176,4 @@ struct CountedPair {
     }
 }
 
-extension CountingPairsVC
-{
-    
-}
-
 
