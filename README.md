@@ -50,6 +50,10 @@ If you dont wish to rummage through the code, or can't or do not want to run the
 ## Volleyball match
 
     static func volleyball(A: Int, B: Int) -> Int {
+        if A < 25 || B < 25 {
+            return 0
+        }
+        
         let treeRootNode = Node.init(leftValue: 0, rightValue: 0, left: nil, leftMax: A, right: nil, rightMax: B)
 
         treeRootNode.construct()
